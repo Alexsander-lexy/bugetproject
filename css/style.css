@@ -1,13 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Poppins:wght@600&family=Source+Sans+3:wght@500;600&display=swap');
 
-@page {
-    size: A4;
-    margin: 1cm;
-    @top-center {
-        content: "Cabeçalho da Página";
-    }
-    @bottom-center {
-        content: "Rodapé da Página";
+@media print {
+    .btn-print{
+        display: none;
     }
 }
 
@@ -48,7 +43,7 @@ header{
 
 /*Definições da Tabela*/
 table , td, th {
-    font-family: Montserrat;
+    font-family: 'Montserrat';
 	border: 1px solid #595959;
 	border-collapse: collapse;
 }
@@ -59,8 +54,14 @@ th{
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 11px;
-
 }
+
+td{
+    font-family:'Source Sans 3';
+    font-size: 12px;
+    font-weight: 600;
+}
+
 .td-desc{
     width: 60%;
 }
@@ -76,9 +77,7 @@ td, th {
 	padding: 3px;
 	height: 25px;
 }
-th {
-	background: #f0e6cc;
-}
+
 .even {
 	background: #fbf8f0;
 }
