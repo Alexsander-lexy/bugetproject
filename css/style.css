@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@600&display=swap');
+
+@page {
+    size: A4;
+    margin: 1cm;
+    @top-center {
+        content: "Cabeçalho da Página";
+    }
+    @bottom-center {
+        content: "Rodapé da Página";
+    }
+}
+
+h1{
+    font-family: Poppins;
+    font-size:larger;
+    line-height: 23px;
+}
+h3{
+    font-family: Montserrat;
+    font-size:smaller;
+}
+
+
+/*Definições do Cabeçalho*/
+main{
+    padding: 20px 50px 20px 60px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 50px 45px 35px 67px;
+    background-color:#073a67 ;
+    color:white;
+    letter-spacing: 5px;
+    line-height:23px ;
+    text-transform: uppercase;
+
+}
+
+.main-logo{
+    width: 200px;
+    height: auto;
+    object-fit:contain;
+}
+
+/*Definições da Tabela*/
+table , td, th {
+	border: 1px solid #595959;
+	border-collapse: collapse;
+}
+td, th {
+	padding: 3px;
+	width: 30px;
+	height: 25px;
+}
+th {
+	background: #f0e6cc;
+}
+.even {
+	background: #fbf8f0;
+}
+.odd {
+	background: #fefcf9;
+}
