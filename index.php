@@ -39,8 +39,11 @@ include_once("conexao.php");
 
                     <input type="submit" value="Pesquisar">
                 </form>
-                <a href="./cadastro.php">
+                <a href="./cadastro_clientes.php">
                     <button>Novo Cliente</button>
+                </a>
+                <a href="./cadastro_servicos.php">
+                    <button>Novo Serviço</button>
                 </a>
                 <hr>
                 <br>
@@ -64,7 +67,7 @@ include_once("conexao.php");
 
             <?php
         if (isset($_SESSION['clienteEncontrado']) && $_SESSION['clienteEncontrado']) {
-            // Cliente foi encontrado, exibir apenas o nome
+            // Cliente foi encontrado, exibir informações
             $cliente = $_SESSION['cliente'];
             echo "Nome: " . $cliente['NomeEmpresa'] . "<br>";
             echo "Whatsapp: " . $cliente['CelularWhatsapp'] . "<br>";
