@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once("conexao.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -23,18 +28,26 @@
             <h1>Proposta <br>
                 Produção de Conteúdo
             </h1>
+            
+
+            
             <!--INCLUIR INFORMAÇÕES PARA NF-->
             <div class="oculto">
-                <form>
-                    <label for="cliente">Procurar cliente:</label><br>
-                    <input type="search" name="cliente" id="cliente-form">
+                <form action="pesquisar_cliente.php" method="post">
+                    <label for="cpf">Digite o CPF/CNPJ do cliente:</label><br>
+                    <input type="text" id="cpf" name="cpf" placeholder="Digite o CPF" required>
 
                     <input type="submit" value="Pesquisar">
                 </form>
                 <a href="./cadastro.php">
-                    <button>Cadastrar Cliente</button>
+                    <button>Novo Cliente</button>
                 </a>
+                <hr>
+                <br>
             </div>
+            <div id="cabecalho-cliente">
+
+    </div>
 
             <div><!-- BOTÃO IMPRESSÃO  -->
                 <button class="btn-print" type="button">
@@ -49,7 +62,19 @@
                 </button>
             </div>
 
-            <h3>NOME DO CLIENTE</h3>
+            <?php
+        if (isset($_SESSION['clienteEncontrado']) && $_SESSION['clienteEncontrado']) {
+            // Cliente foi encontrado, exibir apenas o nome
+            $cliente = $_SESSION['cliente'];
+            echo "Nome: " . $cliente['NomeEmpresa'] . "<br>";
+            echo "Whatsapp: " . $cliente['CelularWhatsapp'] . "<br>";
+            echo "CNPJ: " . $cliente['CNPJ'] . "<br>";
+            echo "CEP: " . $cliente['CEP'] . "<br><br>";
+        } else {
+            // Cliente não foi encontrado, você pode exibir uma mensagem adequada aqui
+            echo "<p style='color:red;'>Nenhum cliente encontrado.</p>";
+        }
+        ?>
             <div>
                 <table>
                     <caption>Projeto: Produção de Vídeo - Sem Roteiro</caption>

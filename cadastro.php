@@ -46,7 +46,7 @@ session_start();
     
         <input type="submit" value="Cadastrar Cliente"><br>
     </form>
-    <a href="./index.html">
+    <a href="./index.php">
             <button><span class="material-symbols-outlined">keyboard_return</span></button>
      </a>
 </body>
