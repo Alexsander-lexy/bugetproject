@@ -1,36 +1,46 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orçamento instantâneo</title>
+    <link rel="shortcut icon" href="./img/logo-maker-producoes-favicon.png" type="image/x-icon">
     <!--Conectando à biblioteca de ícones do google-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
 <body>
-<div class="formu">
-        <h2>Cadastro</h2>
-        <form action="">
-            <label for="">Cliente/Empresa</label>
-            <input type="text" name="" id="">
+<div>
+    <h1>Cadastro de Clientes</h1>
+    <?php
+    if(isset($_SESSION['msg'])){
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+    ?>
+    <form method="POST" action="processa.php">
+        <label for="nome_empresa">Nome/Empresa:</label>
+        <input type="text" name="nome_empresa" id="nome_empresa" required><br><br>
+    
+        <label for="celular_whatsapp">Celular(Whatsapp):</label>
+        <input type="text" name="celular_whatsapp" id="celular_whatsapp" required><br><br>
+    
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" name="cnpj" id="cnpj" required><br><br>
+    
+        <label for="cep">CEP:</label>
+        <input type="text" name="cep" id="cep" required><br><br>
+    
+        <label for="cidade">Cidade:</label>
+        <input type="text" name="cidade" id="cidade" required><br><br>
+    
+        <input type="submit" value="Cadastrar Cliente">
+    </form>
 
-            <label for="">CPF/CNPJ</label>
-            <input type="number" name="" id="">
-
-            <label for="">Endereço</label>
-            <input type="text" name="" id="">
-
-            <label for="">CEP:</label>
-            <input type="number" name="" id="">
-
-            <label for="">Telefone</label>
-            <input type="tel" name="" id="">
-
-            <label for="">Observações:</label>
-            <input type="textarea" name="" id="">
-        </form>
         <div><!-- BOTÃO IMPRESSÃO  -->
             <button class="btn-print" type="button">
                 <span class="material-symbols-outlined">

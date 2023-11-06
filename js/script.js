@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
     btnPrint.addEventListener("click",function(){
         descricao.style.display ='none';
-        termos.style.display='block;'
+        termos.style.display='block';
         window.print();
         descricao.style.display ='block';
     }
@@ -21,4 +21,3 @@ document.addEventListener("DOMContentLoaded",function(){
         }
     );
 });
-
