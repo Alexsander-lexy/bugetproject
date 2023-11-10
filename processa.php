@@ -8,12 +8,6 @@ $cnpj = filter_input(INPUT_POST,'cnpj',FILTER_SANITIZE_NUMBER_INT);
 $cep = filter_input(INPUT_POST,'cep',FILTER_SANITIZE_NUMBER_INT);
 $cidade = filter_input(INPUT_POST,'cidade',FILTER_SANITIZE_SPECIAL_CHARS);
 
-//echo "Nome: $nome<br>";
-//echo "Celular: $celular<br>";
-//echo "CNPJ: $cnpj<br>";
-//echo "CEP: $cep<br>";
-//echo "Cidade: $cidade";
-
 $result_usuario = "INSERT INTO clientes (NomeEmpresa,CelularWhatsapp,CNPJ,CEP,Cidade) VALUES ('$nome','$celular','$cnpj','$cep','$cidade')";
 $resultado_usuario =  mysqli_query($conn,$result_usuario);
 
